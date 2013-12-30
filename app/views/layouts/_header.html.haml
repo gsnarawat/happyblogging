@@ -1,0 +1,25 @@
+#templatemo_wrapper_outer
+  #templatemo_wrapper_inner
+    #templatemo_header
+      #site_title
+        %a{href: "/"}
+          Gopal's Blog
+          %span Steps towards a Change
+     
+      / end of site_title
+    / end of templatemo_header
+    #templatemo_menu
+      %ul
+        %li
+          %a.current{href: "#"} Home
+        %li
+          %a{href: "#"} Gallery
+        %li
+          %a{href: "#"} About
+        %li
+          %a{href: "#"} Contact
+        %li
+          -if(current_user)
+            =link_to 'Sign-Out',  destroy_user_session_path, method: :delete
+          -else
+            =link_to 'Sign-in',   new_user_session_path 
