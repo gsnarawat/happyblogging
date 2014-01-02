@@ -1,0 +1,21 @@
+%div.user_signin{:style=>"margin: 66px 0 70px 366px;width:500px;"}
+  %h2 Registration Area:
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    %div
+      %br
+      = f.label :email
+      %br
+      = f.email_field :email, :autofocus => true
+    %div
+      %br
+      = f.label :password
+      %br
+      = f.password_field :password
+    %div
+      %br
+      = f.label :password_confirmation
+      %br
+      = f.password_field :password_confirmation
+    %div{:style=>"margin:21px 0 -25px 121px;"}= f.submit "Register"
+  %div{:style=>"font-size:24px;"}= render "devise/shared/links"
