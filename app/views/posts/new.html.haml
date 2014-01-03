@@ -1,2 +1,13 @@
-%h1 Posts#new
-%p Find me in app/views/posts/new.html.haml
+#newpost{:style=>"margin:0px; width:500px;"}
+  =form_for(@post) do |p|
+    %br
+    =p.label :title
+    =p.text_field :title
+    %br
+    =p.label :category
+    =p.text_field :category
+    %br
+    =p.label :content
+    =p.text_area :content
+    %br
+    =p.submit
